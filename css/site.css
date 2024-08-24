@@ -184,6 +184,9 @@
             color: #008CBA;
             text-decoration: none;
         }
+
+       
+
         @media (max-width: 768px) {
             .container {
                 flex-direction: column;
@@ -198,6 +201,13 @@
                 transform: translate(-50%, -50%);
             }
         }
+        
+        @media (max-width: 400px) {
+            .login-form {
+                transform: translate(-50%, -50%) scale(.7);
+            }
+        }
+        
 
         .welcome-message {
             text-align: center;
