@@ -3,158 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">    
     <title>Exportamos bananos frescos</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-
-        .container {
-            display: flex;
-            max-width: 1000px;
-            width: 90%;
-            background-color: #fff;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .banner {
-            flex: 1;
-            background-image: url('bananas.jpg');
-            background-size: cover;
-            background-position: center;
-            position: relative;
-            padding: 20px;
-        }
-
-        .banner-text {
-            position: absolute;
-            bottom: 40px;
-            left: 20px;
-            color: #fff;
-            font-size: 2.5em;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        }
-
-        .login-form {
-            flex: 1;
-            padding: 40px;
-            background-color: #fff;
-        }
-
-        .logo {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .logo img {
-            width: 150px;
-        }
-
-        .error-message {
-            color: red;
-            font-size: 0.8em;
-            margin-bottom: 10px;
-        }
-
-        input[type="text"],
-        input[type="password"] {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-        }
-
-        .password-container {
-            position: relative;
-        }
-
-        .password-toggle {
-            position: absolute;
-            right: 10px;
-            top: 50%;
-            transform: translateY(-50%);
-            cursor: pointer;
-        }
-
-        .login-button {
-            width: 100%;
-            padding: 10px;
-            background-color: #008CBA;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .forgot-password,
-        .create-account {
-            text-align: center;
-            margin-top: 15px;
-            font-size: 0.9em;
-        }
-
-        .create-account a {
-            color: #008CBA;
-            text-decoration: none;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .banner {
-                height: 200px;
-            }
-
-            .banner-text {
-                font-size: 1.8em;
-            }
-        }
-    </style>
+    
 </head>
 <body>
     <div class="container">
         <div class="banner">
-            <div class="banner-text">
-                Exportamos<br>bananos frescos,<br>calidad sin igual.
-            </div>
+            <h1>Exportamos<br>bananos frescos,<br>calidad sin igual.</h1>
         </div>
         <div class="login-form">
             <div class="logo">
-                <img src="logo.png" alt="Plantagiones del Norte S.A.">
+                <img src="./img/logo.png" alt="Plantagiones del Norte S.A.">
             </div>
-            <div class="error-message">usuario o contraseña incorrecto</div>
+            <div class="error-message" role="alert">usuario o contraseña incorrecto</div>
             <form>
-                <input type="text" placeholder="user" required>
-                <div class="password-container">
-                    <input type="password" placeholder="password" required>
-                    <span class="password-toggle">👁️</span>
+                <div class="form-group">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <input type="text" id="username" name="username" placeholder="user" required>
+                </div>
+                <div class="form-group">
+                    <i class="fa fa-lock" aria-hidden="true"></i>
+                    <input type="password" id="password" name="password" placeholder="password" required>
+                    <span class="password-toggle" onclick="togglePassword()">👁️</span>
+                </div>
+                <div class="forgot-password">
+                    <a href="#">olvido su usuario y/o contraseña</a>
                 </div>
                 <button type="submit" class="login-button">iniciar</button>
             </form>
-            <div class="forgot-password">
-                olvido su usuario y/o contraseña
-            </div>
             <div class="create-account">
                 crear una cuenta desde <a href="#">aquí</a>
             </div>
         </div>
     </div>
+    <script>
+        function togglePassword() {
+            var passwordInput = document.getElementById("password");
+            var toggleIcon = document.querySelector(".password-toggle");
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                toggleIcon.textContent = "👁️‍🗨️";
+            } else {
+                passwordInput.type = "password";
+                toggleIcon.textContent = "👁️";
+            }
+        }
+    </script>
 </body>
 </html>

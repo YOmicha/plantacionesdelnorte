@@ -1,0 +1,242 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .lato-thin {
+            font-family: "Lato", sans-serif;
+            font-weight: 100;
+            font-style: normal;
+            }
+
+            .lato-light {
+            font-family: "Lato", sans-serif;
+            font-weight: 300;
+            font-style: normal;
+            }
+
+            .lato-regular {
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            }
+
+            .lato-bold {
+            font-family: "Lato", sans-serif;
+            font-weight: 700;
+            font-style: normal;
+            }
+
+            .lato-black {
+            font-family: "Lato", sans-serif;
+            font-weight: 900;
+            font-style: normal;
+            }
+
+            .lato-thin-italic {
+            font-family: "Lato", sans-serif;
+            font-weight: 100;
+            font-style: italic;
+            }
+
+            .lato-light-italic {
+            font-family: "Lato", sans-serif;
+            font-weight: 300;
+            font-style: italic;
+            }
+
+            .lato-regular-italic {
+            font-family: "Lato", sans-serif;
+            font-weight: 400;
+            font-style: italic;
+            }
+
+            .lato-bold-italic {
+            font-family: "Lato", sans-serif;
+            font-weight: 700;
+            font-style: italic;
+            }
+
+            .lato-black-italic {
+            font-family: "Lato", sans-serif;
+            font-weight: 900;
+            font-style: italic;
+            }
+
+        body {
+            font-family: "Lato", sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background-image: url('../img/back_001.jpg');
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            overflow: hidden;
+            width: 100%;
+            max-width: 1000px;
+            display: flex;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            position: relative;
+            height: 670px;
+        }
+        .banner {
+            flex: 1;
+            padding: 40px;
+            font-size: 20px;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .banner h1 {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+        .login-form {
+            background-color: white;
+            padding: 50px;
+            width: 430px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: absolute;
+            right: 70px;
+            top: 70px;
+            border-radius: 15px;
+        }
+        .logo {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .logo img {
+            width: 100px;
+            height: auto;
+        }
+        .error-message {
+            color: red;
+            font-size: 0.8em;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+            position: relative;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        .form-group i {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 20px;
+            color: #888;
+        }
+        .form-group input[type="text"],
+        .form-group input[type="password"] {
+            padding-left: 40px;
+        }
+        .password-toggle {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 10px;
+            cursor: pointer;
+            color: #888;
+        }
+        .forgot-password {
+            text-align: end;
+            margin: 10px 0 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .forgot-password a{
+            color: #666;
+        }
+        .login-button {
+            width: 100%;
+            padding: 20px;
+            background-color: #008CBA;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+        .create-account {
+            text-align: center;
+            margin-top: 15px;
+            font-size: 0.9em;
+        }
+        .create-account a {
+            color: #008CBA;
+            text-decoration: none;
+        }
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .banner {
+                display: none;
+            }
+            .login-form {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .welcome-message {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.2em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 0.9em;
+            color: #666;
+        }
+        .form-group select {
+            width: 100%;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1em;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 10px center;
+        }
+        .button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+        .button-primary {
+            background-color: #008CBA;
+            color: white;
+        }
+        .button-secondary {
+            background-color: #f4f4f4;
+            color: #333;
+            border: 1px solid #ddd;
+        } 
