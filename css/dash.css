@@ -70,7 +70,7 @@ font-style: italic;
 }
 body {
     font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    background: linear-gradient(116.57deg, #EEEEEE 10.99%, #D3E5D7 66.76%, #B7B7B7 122.53%);
     display: flex;
     min-height: 100vh;
 }
