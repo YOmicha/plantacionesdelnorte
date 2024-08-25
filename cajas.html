@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./css/dash.css">
+    <link rel="stylesheet" href="./css/font-awesome.min.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap" rel="stylesheet">
+    <title>Recepcion de fruta</title>
+   
+</head>
+<body>
+    <aside class="sidebar">
+        <button class="sidebar-toggle" aria-label="Toggle Sidebar">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+        </button>
+        <div class="menu-section">
+            <div class="menu-title"><i class="fa fa-cog" aria-hidden="true"></i><span>compra de frutas</span></div>
+            <div class="menu-item active"><i class="fa fa-copyright" aria-hidden="true"></i> <span> Recepción</span></div>
+            <div class="menu-item"><i class="fa fa-copyright" aria-hidden="true"></i> <span> Detalle de recepción</span></div>
+        </div>
+        <div class="menu-section">
+            <div class="menu-title"><i class="fa fa-cog" aria-hidden="true"></i><span>exportación</span></div>
+            <div class="menu-item"><i class="fa fa-copyright" aria-hidden="true"></i><span> Armar Pallets</span> </div>
+            <div class="menu-item"><i class="fa fa-copyright" aria-hidden="true"></i> <span></span> Asignar Contenedor</div></span></div>
+        </div>
+    </aside>
+    <main class="main-content">
+        <div class="main-content-header">
+            <i class="fa fa-user-o" aria-hidden="true"></i>
+        </div>
+        <div class="header">
+            <div>
+                <div>compra de frutas</div>
+                <h1 class="title source-sans-3-700">Recepcion de fruta</h1>
+            </div>
+            <div class="date">
+                <div>semana: 24</div>
+                <div>Jueves, 12 del 2024</div>
+            </div>
+        </div>
+        <div class="main-content-form">
+            <form>
+                <div class="form-container">
+                    <div class="form-group">
+                        <label for="campus">campus</label>
+                        <select id="campus" required>
+                            <option value="">Choose option</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="fecha">fecha</label>
+                        <input type="date" id="fecha" value="2024-12-12" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="recepcion" class="recepcion-number source-sans-3-700">Recepcion# 0000001</label>
+                    </div>
+                    <div class="form-group">
+                        <label for="centro">centro de acopio</label>
+                        <select id="centro" required>
+                            <option value="">Choose option</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="productor">productor</label>
+                        <select id="productor" required>
+                            <option value="">Choose option</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Guía</label>
+                        <div style="display: flex; gap: 10px;">
+                            <input type="text" placeholder="000" style="width: 33%;">
+                            <input type="text" placeholder="000" style="width: 33%;">
+                            <input type="text" placeholder="000" style="width: 33%;">
+                        </div>
+                    </div>
+                </div>
+                <div class="tabs">
+                    <div class="tab active">cajas</div>
+                    <div class="tab">palets</div>
+                </div>
+                <div class="container-table">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>semana</th>
+                                <th>hacienda</th>
+                                <th>puerto</th>
+                                <th>marca</th>
+                                <th>cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Title</td>
+                                <td>Title</td>
+                                <td>Title</td>
+                                <td>Title</td>
+                                <td>Title</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                <div class="content-message">    
+                    <div class="success-message">
+                        <i class="fa fa-check-circle" aria-hidden="true"></i> se guardó el registro con éxito
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button type="submit" class="button button-primary">guardar</button>
+                    <button type="button" class="button button-secondary">cancelar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script>
+        document.querySelector('.sidebar-toggle').addEventListener('click', function() {
+            document.querySelector('.sidebar').classList.toggle('collapsed');
+        });
+    </script>
+</body>
+</html>
