@@ -101,7 +101,7 @@
             margin-bottom: 20px;
         }
         .login-form {
-            background-color: white;
+            background: rgba(255, 255, 255, 0.9);
             padding: 50px;
             width: 430px;
             display: flex;
