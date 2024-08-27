@@ -31,7 +31,28 @@
     </aside>
     <main class="main-content">
         <div class="main-content-header">
-            <i class="fa fa-user-o" aria-hidden="true"></i>
+            <div class="user-menu">
+                <div class="user-icon" id="userMenuToggle" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user-o" aria-hidden="true"></i>
+                    <img src="./img/chevron-down.svg" />
+                </div>
+                <div class="popup-menu" id="popupMenu" role="menu">
+                    <div class="user-info">
+                        <div class="user-name">Michael Jiménez</div>
+                        <div class="user-role">Administrador</div>
+                    </div>
+                    <ul class="menu-options">
+                        <li role="menuitem">
+                            <span class="menu-icon">€</span>
+                            menu option 1
+                        </li>
+                        <li role="menuitem">
+                            <span class="menu-icon">€</span>
+                            menu option 2
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
         <div class="header">
             <div>
@@ -172,6 +193,21 @@
         </div>
     </main>
     <script>
+        const userMenuToggle = document.getElementById('userMenuToggle');
+        const popupMenu = document.getElementById('popupMenu');
+
+        userMenuToggle.addEventListener('click', function() {
+            popupMenu.classList.toggle('show');
+            this.setAttribute('aria-expanded', popupMenu.classList.contains('show'));
+        });
+
+        document.addEventListener('click', function(event) {
+            if (!userMenuToggle.contains(event.target) && !popupMenu.contains(event.target)) {
+                popupMenu.classList.remove('show');
+                userMenuToggle.setAttribute('aria-expanded', 'false');
+            }
+        });
+        
         document.querySelector('.sidebar-toggle').addEventListener('click', function() {
             document.querySelector('.sidebar').classList.toggle('collapsed');
         });
