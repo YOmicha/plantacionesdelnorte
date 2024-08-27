@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="./css/dash.css">
+    <link rel="stylesheet" href="./css/table.css">
+    <script type="text/javascript" src="./js/table.js"></script>
     <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -158,7 +160,7 @@
                     <div class="tab">palets</div>
                 </div>
                 <div class="container-table">
-                    <table>
+                    <table id="editableTable">
                         <thead>
                             <tr>
                                 <th>semana</th>
@@ -166,18 +168,40 @@
                                 <th>puerto</th>
                                 <th>marca</th>
                                 <th>cantidad</th>
+                                <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Title</td>
-                                <td>Title</td>
-                                <td>Title</td>
-                                <td>Title</td>
-                                <td>Title</td>
+                                <td class="editable" contenteditable="true" data-label="semana">Title</td>
+                                <td class="editable" contenteditable="true" data-label="hacienda">Title</td>
+                                <td data-label="puerto">
+                                    <select>
+                                        <option value="">Seleccione un puerto</option>
+                                        <option value="puerto1">Puerto 1</option>
+                                        <option value="puerto2">Puerto 2</option>
+                                        <option value="puerto3">Puerto 3</option>
+                                    </select>
+                                </td>
+                                <td class="editable" contenteditable="true" data-label="marca">Title</td>
+                                <td class="editable" contenteditable="true" data-label="cantidad">Title</td>
+                                <td data-label="Acciones">
+                                    <button class="button button-primary update-btn">actualizar</button>
+                                    <button class="button delete-btn">eliminar</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
+                    <button class="add-row">agregar item</button>
+
+                    <div class="popup-overlay" id="deleteConfirmPopup">
+                        <div class="popup">
+                            <p>¿Está seguro de que desea eliminar esta fila?</p>
+                            <button class="popup-btn popup-btn-confirm" id="confirmDelete">Sí, eliminar</button>
+                            <button class="popup-btn popup-btn-cancel" id="cancelDelete">Cancelar</button>
+                        </div>
+                    </div>
+                
                 </div>
                 <div>
                 <div class="content-message">    
