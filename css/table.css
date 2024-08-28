@@ -12,6 +12,9 @@ th, td {
     padding: 12px;
     text-align: left;
     border-bottom: 1px solid #e0e0e0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 th {
     font-weight: 600;
@@ -65,7 +68,7 @@ th {
     background-color: #1976D2;
 }
 select {
-    width: 100%;
+    width: 200px;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
