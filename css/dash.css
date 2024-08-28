@@ -293,6 +293,7 @@ body {
     border: 1px solid #E2E2E2;
     padding: 10px;
     border-radius: 7px;
+    overflow-x: scroll;
 }
 table {
     width: 100%;
@@ -308,6 +309,12 @@ th, td {
     display: flex;
     justify-content: center;
     padding: 20px;
+}
+.acc {
+    min-width: 100px;
+}
+.acc button {
+    width: 20px;
 }
 .success-message {
     color: #006600;

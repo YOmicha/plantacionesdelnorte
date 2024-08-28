@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla Editable Actualizada</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+        .table-container {
+            background-color: white;
+            border-radius: 8px;
+            overflow-x: auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            background-color: #f8f8f8;
+            font-weight: bold;
+        }
+        .editable {
+            position: relative;
+            padding-right: 30px;
+        }
+        .editable::after {
+            content: "▼";
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 12px;
+            color: #999;
+        }
+        .add-row {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .add-row:hover {
+            background-color: #45a049;
+        }
+        .delete-btn, .update-btn {
+            padding: 5px 10px;
+            margin: 0 5px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .delete-btn {
+            background-color: #f44336;
+            color: white;
+        }
+        .update-btn {
+            background-color: #2196F3;
+            color: white;
+        }
+        .delete-btn:hover {
+            background-color: #d32f2f;
+        }
+        .update-btn:hover {
+            background-color: #1976D2;
+        }
+        select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: white;
+            font-size: 14px;
+        }
+        .popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+        }
+        .popup {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+        .popup p {
+            margin-bottom: 20px;
+        }
+        .popup-btn {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .popup-btn-confirm {
+            background-color: #f44336;
+            color: white;
+        }
+        .popup-btn-cancel {
+            background-color: #ccc;
+            color: black;
+        }
+        @media screen and (max-width: 1200px) {
+            table, thead, tbody, th, td, tr {
+                display: block;
+            }
+            thead tr {
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+            tr {
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 8px;
+                overflow: hidden;
+            }
+            td {
+                border: none;
+                position: relative;
+                padding-left: 50%;
+            }
+            td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 6px;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+            }
+            .editable::after {
+                right: auto;
+                left: calc(50% - 15px);
+            }
+            .delete-btn, .update-btn {
+                width: calc(50% - 10px);
+                margin: 5px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="table-container">
+        <table id="editableTable">
+            <thead>
+                <tr>
+                    <th>marca</th>
+                    <th>hacienda</th>
+                    <th>puerto destino</th>
+                    <th>cant. cajas</th>
+                    <th>pallet</th>
+                    <th>sscc</th>
+                    <th>contenedor</th>
+                    <th>cont. principal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="editable" contenteditable="true" data-label="marca">Title</td>
+                    <td class="editable" contenteditable="true" data-label="hacienda">Title</td>
+                    <td data-label="puerto destino">
+                        <select>
+                            <option value="">Seleccione un puerto</option>
+                            <option value="puerto1">Puerto 1</option>
+                            <option value="puerto2">Puerto 2</option>
+                            <option value="puerto3">Puerto 3</option>
+                        </select>
+                    </td>
+                    <td class="editable" contenteditable="true" data-label="cant. cajas">0</td>
+                    <td class="editable" contenteditable="true" data-label="pallet">Title</td>
+                    <td class="editable" contenteditable="true" data-label="sscc">Title</td>
+                    <td class="editable" contenteditable="true" data-label="contenedor">Title</td>
+                    <td data-label="cont. principal">
+                        <input type="checkbox" id="contPrincipal1" name="contPrincipal">
+                        <label for="contPrincipal1">Principal</label>
+                    </td>
+                    <td data-label="Acciones">
+                        <button class="update-btn">Actualizar</button>
+                        <button class="delete-btn">Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <button class="add-row">Agregar Fila</button>
+
+    <div class="popup-overlay" id="deleteConfirmPopup">
+        <div class="popup">
+            <p>¿Está seguro de que desea eliminar esta fila?</p>
+            <button class="popup-btn popup-btn-confirm" id="confirmDelete">Sí, eliminar</button>
+            <button class="popup-btn popup-btn-cancel" id="cancelDelete">Cancelar</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const table = document.getElementById('editableTable');
+            const addRowBtn = document.querySelector('.add-row');
+            const deleteConfirmPopup = document.getElementById('deleteConfirmPopup');
+            const confirmDeleteBtn = document.getElementById('confirmDelete');
+            const cancelDeleteBtn = document.getElementById('cancelDelete');
+            let rowToDelete = null;
+
+            addRowBtn.addEventListener('click', function() {
+                const newRow = table.insertRow(-1);
+                const columns = ['marca', 'hacienda', 'puerto destino', 'cant. cajas', 'pallet', 'sscc', 'contenedor', 'cont. principal', 'Acciones'];
+                columns.forEach((col, index) => {
+                    const cell = newRow.insertCell(index);
+                    cell.setAttribute('data-label', col);
+                    if (col === 'puerto destino') {
+                        cell.innerHTML = `
+                            <select>
+                                <option value="">Seleccione un puerto</option>
+                                <option value="puerto1">Puerto 1</option>
+                                <option value="puerto2">Puerto 2</option>
+                                <option value="puerto3">Puerto 3</option>
+                            </select>
+                        `;
+                    } else if (col === 'cont. principal') {
+                        const checkboxId = `contPrincipal${table.rows.length - 1}`;
+                        cell.innerHTML = `
+                            <input type="checkbox" id="${checkboxId}" name="contPrincipal">
+                            <label for="${checkboxId}">Principal</label>
+                        `;
+                    } else if (col === 'Acciones') {
+                        cell.innerHTML = `
+                            <button class="update-btn">Actualizar</button>

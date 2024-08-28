@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="./css/dash.css">
     <link rel="stylesheet" href="./css/table.css">
-    <script type="text/javascript" src="./js/table.js"></script>
+    <script type="text/javascript" src="./js/tablePallets.js"></script>
     <link rel="stylesheet" href="./css/font-awesome.min.css">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -156,26 +156,31 @@
                     </div>
                 </div>
                 <div class="tabs">
-                    <div class="tab active">cajas</div>
-                    <div class="tab">palets</div>
+                    <div class="tab">cajas</div>
+                    <div class="tab active">palets</div>
                 </div>
                 <div class="container-table">
                     <table id="editableTable">
                         <thead>
                             <tr>
-                                <th>semana</th>
-                                <th>hacienda</th>
-                                <th>puerto</th>
-                                <th>marca</th>
-                                <th>cantidad</th>
+                                <th>Marca</th>
+                                <th>Hacienda</th>
+                                <th>Puerto Destino</th>
+                                <th>Cant. Cajas</th>
+                                <th>Pallet</th>
+                                <th>SSCC</th>
+                                <th>Cajas por Pallet</th>
+                                <th>Cantidad de Pallets</th>
+                                <th>Contenedor</th>
+                                <th>Cont. Principal</th>
                                 <th>Acciones</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td class="editable" contenteditable="true" data-label="semana">Title</td>
-                                <td class="editable" contenteditable="true" data-label="hacienda">Title</td>
-                                <td data-label="puerto">
+                                <td class="editable" contenteditable="true" data-label="Marca">Marca 1</td>
+                                <td class="editable" contenteditable="true" data-label="Hacienda">Hacienda 1</td>
+                                <td data-label="Puerto Destino">
                                     <select>
                                         <option value="">Seleccione un puerto</option>
                                         <option value="puerto1">Puerto 1</option>
@@ -183,10 +188,18 @@
                                         <option value="puerto3">Puerto 3</option>
                                     </select>
                                 </td>
-                                <td class="editable" contenteditable="true" data-label="marca">Title</td>
-                                <td class="editable" contenteditable="true" data-label="cantidad">Title</td>
-                                <td data-label="Acciones">
-                                    <button class="button button-primary update-btn"><i class="fa fa-check" aria-hidden="true"></i></button>
+                                <td class="editable" contenteditable="true" data-label="Cant. Cajas">100</td>
+                                <td class="editable" contenteditable="true" data-label="Pallet">P001</td>
+                                <td class="editable" contenteditable="true" data-label="SSCC">SSCC001</td>
+                                <td class="editable" contenteditable="true" data-label="Cajas por Pallet">50</td>
+                                <td class="editable" contenteditable="true" data-label="Cantidad de Pallets">2</td>
+                                <td class="editable" contenteditable="true" data-label="Contenedor">CONT001</td>
+                                <td data-label="Cont. Principal">
+                                    <input type="checkbox" id="contPrincipal1" name="contPrincipal1">
+                                    <label for="contPrincipal1">Principal</label>
+                                </td>
+                                <td data-label="Acciones" class="acc">
+                                    <button class="button update-btn button-primary"><i class="fa fa-check" aria-hidden="true"></i></button>
                                     <button class="button delete-btn"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                                 </td>
                             </tr>
