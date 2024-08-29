@@ -159,6 +159,68 @@
                     <div class="tab">cajas</div>
                     <div class="tab active">palets</div>
                 </div>
+                <div class="form-container cont-pallets">
+                    <div class="form-group">
+                        <div class="form-group sub-form-group">
+                            <label for="campus">hacienda</label>
+                            <select id="campus" required>
+                                <option value="">Choose option</option>
+                            </select>
+                        </div>
+                        <div class="form-group sub-form-group">
+                            <label for="centro">marca</label>
+                            <select id="centro" required>
+                                <option value="">Choose option</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="form-group sub-form-group">
+                            <label for="centro">puerto destino</label>
+                            <select id="centro" required>
+                                <option value="">Choose option</option>
+                            </select>
+                        </div>
+                        <div class="form-group sub-form-group">
+                            <div style="display: flex; gap: 10px;">
+                                <div class="form-group">
+                                    <label>cajas por pallets</label>
+                                    <input type="text" placeholder="000">
+                                </div>
+                                <div class="form-group">
+                                    <label>cantidad de pallets</label>
+                                    <input type="text" placeholder="000">
+                                </div>
+                            </div>
+                            <br />
+                            <div class="button-group">
+                                <button type="submit" class="button button-primary">generar</button>
+                                <button type="button" class="button button-secondary">limpiar</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="checkbox-group sub-form-group">
+                            <input type="checkbox" id="asigna-contenedor" name="asigna-contenedor">
+                            <label for="asigna-contenedor">asigna contenedor</label>
+                        </div>
+                        <div class="form-group ">
+                            <div class="checkbox-group">
+                                <input type="checkbox" id="asigna-contenedor" name="asigna-contenedor">
+                                <label for="asigna-contenedor">todos</label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="centro">contendor principal</label>
+                            <select id="centro" required>
+                                <option value="">Choose option</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                
                 <div class="container-table">
                     <table id="editableTable">
                         <thead>

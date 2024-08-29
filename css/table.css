@@ -68,13 +68,34 @@ th {
     background-color: #1976D2;
 }
 select {
-    width: 200px;
     padding: 8px;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: white;
     font-size: 14px;
 }
+
+table select {
+    width: 200px;    
+}
+
+.cont-pallets {
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+}
+.sub-form-group {
+    padding-bottom: 8px;
+}
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.checkbox-group input[type="checkbox"] {
+    margin-right: 10px;
+}
+
 .popup-overlay {
     display: none;
     position: fixed;
