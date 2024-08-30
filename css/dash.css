@@ -300,9 +300,20 @@ body {
     margin-top: 50px;
     padding-bottom: 6px;
 }
+form h3 {
+    margin-bottom: 10px;
+}
 .tab {
     padding: 10px 40px;
     cursor: pointer;
+    display: flex;
+    gap: 10px;
+    border: 1px solid #19557e;
+    margin-right: 20px;
+    border-radius: 7px;
+}
+.tab img{
+    height: 22px;
 }
 .tab.active {
     background: #1a557e;
