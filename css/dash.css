@@ -159,10 +159,11 @@ body {
     margin: 20px 20px 20px 30px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     font-size: 13px;
     position: relative;
     border-bottom: 10px solid #4a9799;
+    padding-top: 100px;
 }
 .recepcion-number {
     font-size: 20px!important;
