@@ -375,6 +375,13 @@ th, td {
     background-color: #f4f4f4;
     color: #333;
 }
+.menu-sub-item{
+    border-bottom: 1px solid #9B9B9B;
+    color: #9B9B9B;
+    margin-bottom: 3px;
+    padding: 6px 10px;
+}
+
 @media (max-width: 768px) {
     body {
         flex-direction: column;
